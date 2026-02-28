@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Financial Court | Recursos Gratis para Latinos en UK 🇬🇧</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,700&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --clay:#8B3A2A;--clay2:#A84432;--clay-light:#C4614A;--clay-dim:rgba(139,58,42,0.15);
+  --forest:#1A2E1E;--forest2:#243428;--forest3:#2D4132;
+  --gold:#C9A857;--gold2:#E2C278;--gold-dim:rgba(201,168,87,0.1);
+  --cream:#F5EFE0;--cream2:#EDE4D0;--cream3:rgba(245,239,224,0.7);--cream4:rgba(245,239,224,0.4);
+  --text:#F5EFE0;--dim:rgba(245,239,224,0.55);--dim2:rgba(245,239,224,0.25);
+  --border:rgba(245,239,224,0.08);--border2:rgba(245,239,224,0.15);
+  --serif:'Cormorant Garamond',serif;--sans:'Jost',sans-serif;
+}
+body{
+  background:var(--forest);color:var(--text);
+  font-family:var(--sans);font-size:15px;line-height:1.6;
+  min-height:100vh;padding:0;margin:0;
+  display:flex;flex-direction:column;align-items:center;
+}
+body::before{
+  content:'';position:fixed;inset:0;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events:none;z-index:0;opacity:.8;
+}
+
+.container{
+  max-width:480px;width:100%;padding:40px 20px 60px;
+  position:relative;z-index:1;
+}
+
+/* HEADER */
+.header{
+  text-align:center;margin-bottom:40px;
+  animation:fadeInDown 0.6s ease;
+}
+.avatar{
+  width:100px;height:100px;border-radius:50%;
+  border:3px solid var(--clay);
+  margin:0 auto 20px;
+  background:linear-gradient(135deg,var(--clay),var(--gold));
+  display:flex;align-items:center;justify-content:center;
+  font-size:48px;
+  box-shadow:0 8px 24px rgba(139,58,42,0.3);
+}
+.name{
+  font-family:var(--serif);font-size:32px;font-weight:700;
+  color:var(--cream);margin-bottom:8px;letter-spacing:-0.01em;
+}
+.bio{
+  font-size:15px;color:var(--dim);line-height:1.7;
+  max-width:360px;margin:0 auto 20px;font-weight:300;
+}
+.badge-free{
+  display:inline-block;
+  background:#00E676;color:#000;
+  padding:6px 16px;border-radius:20px;
+  font-size:12px;font-weight:700;
+  letter-spacing:0.06em;text-transform:uppercase;
+}
+
+/* SECTION TITLE */
+.section-title{
+  font-family:var(--serif);font-size:20px;font-weight:700;
+  color:var(--gold);margin:32px 0 20px;
+  text-align:center;letter-spacing:-0.01em;
+}
+
+/* LINKS */
+.links{
+  display:flex;flex-direction:column;gap:16px;
+  margin-bottom:32px;
+}
+.link-card{
+  background:var(--forest2);
+  border:2px solid rgba(0,230,118,0.3);
+  border-radius:12px;padding:20px 24px;
+  text-decoration:none;
+  display:flex;align-items:flex-start;gap:16px;
+  transition:all 0.3s;
+  position:relative;overflow:hidden;
+}
+.link-card::before{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(135deg,rgba(0,230,118,0.1),transparent);
+  opacity:0;transition:opacity 0.3s;
+}
+.link-card:hover{
+  border-color:#00E676;
+  transform:translateY(-4px);
+  box-shadow:0 8px 24px rgba(0,230,118,0.3);
+}
+.link-card:hover::before{opacity:1}
+.link-icon{
+  width:48px;height:48px;
+  background:linear-gradient(135deg,#00E676,#00C853);
+  border-radius:10px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:24px;flex-shrink:0;
+  position:relative;z-index:1;
+}
+.link-content{
+  flex:1;position:relative;z-index:1;
+}
+.link-title{
+  font-size:16px;font-weight:700;color:var(--cream);
+  margin-bottom:6px;line-height:1.4;
+}
+.link-desc{
+  font-size:13px;color:var(--dim);
+  line-height:1.6;
+}
+
+/* CALCULATOR CARD (destacado) */
+.calculator-card{
+  border:2px solid var(--gold);
+  background:linear-gradient(135deg,rgba(201,168,87,0.15),var(--forest2));
+  position:relative;
+}
+.calculator-card::after{
+  content:'NUEVO';
+  position:absolute;top:-10px;right:20px;
+  background:var(--gold);color:#000;
+  padding:4px 12px;border-radius:12px;
+  font-size:10px;font-weight:700;letter-spacing:0.1em;
+}
+.calculator-card .link-icon{
+  background:linear-gradient(135deg,var(--gold),var(--gold2));
+}
+.calculator-card:hover{
+  border-color:var(--gold2);
+  box-shadow:0 8px 24px rgba(201,168,87,0.4);
+}
+
+/* SOCIAL */
+.social{
+  display:flex;gap:16px;justify-content:center;
+  margin-top:40px;padding-top:32px;
+  border-top:1px solid var(--border);
+}
+.social-link{
+  width:48px;height:48px;
+  background:var(--forest2);
+  border:1px solid var(--border2);
+  border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:20px;
+  text-decoration:none;
+  transition:all 0.3s;
+}
+.social-link:hover{
+  background:var(--clay);
+  border-color:var(--clay);
+  transform:translateY(-4px) scale(1.1);
+  box-shadow:0 8px 20px rgba(139,58,42,0.4);
+}
+
+/* FOOTER */
+.footer{
+  text-align:center;padding:20px;
+  font-size:12px;color:var(--dim2);
+  margin-top:40px;
+}
+
+/* ANIMATIONS */
+@keyframes fadeInDown{
+  from{opacity:0;transform:translateY(-20px)}
+  to{opacity:1;transform:translateY(0)}
+}
+@keyframes fadeInUp{
+  from{opacity:0;transform:translateY(20px)}
+  to{opacity:1;transform:translateY(0)}
+}
+.animate{
+  animation:fadeInUp 0.6s ease backwards;
+}
+.animate-1{animation-delay:0.1s}
+.animate-2{animation-delay:0.2s}
+.animate-3{animation-delay:0.3s}
+.animate-4{animation-delay:0.4s}
+.animate-5{animation-delay:0.5s}
+.animate-6{animation-delay:0.6s}
+.animate-7{animation-delay:0.7s}
+.animate-8{animation-delay:0.8s}
+
+@media(max-width:480px){
+  .container{padding:30px 16px 50px}
+  .name{font-size:28px}
+  .link-title{font-size:15px}
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+  <!-- HEADER -->
+  <div class="header">
+    <div class="avatar">🎾</div>
+    <div class="name">Financial Court</div>
+    <div class="bio">
+      Recursos financieros gratuitos<br>
+      para latinos viviendo en UK 🇬🇧
+    </div>
+    <div class="badge-free">✨ TODO GRATIS</div>
+  </div>
+
+  <!-- CALCULADORA (destacada) -->
+  <!-- 
+    ⚠️ IMPORTANTE: Cuando subas la calculadora a Vercel, 
+    reemplaza "./household_cash_flow_fixed.html" con tu URL de Vercel real
+    Ejemplo: https://calculadora-presupuesto.vercel.app
+  -->
+  <a href="./household_cash_flow_fixed.html" class="link-card calculator-card animate animate-1">
+    <div class="link-icon">💰</div>
+    <div class="link-content">
+      <div class="link-title">Household Cash Flow Calculator</div>
+      <div class="link-desc">Visualiza tus ingresos y gastos · Descarga PDF con análisis completo</div>
+    </div>
+  </a>
+
+  <!-- RECURSOS BANCOS -->
+  <div class="section-title">🏦 Bancos & Finanzas</div>
+  <div class="links">
+    <a href="https://www.notion.so/Directorio-de-Bancos-para-estudiantes-corto-y-largo-plazo-b1143f65291c42089d01ec01ec10243c" class="link-card animate animate-2">
+      <div class="link-icon">🎓</div>
+      <div class="link-content">
+        <div class="link-title">Directorio de Bancos para Estudiantes</div>
+        <div class="link-desc">Corto y largo plazo · Comparativa de beneficios y recompensas 2026</div>
+      </div>
+    </a>
+
+    <a href="https://www.notion.so/Cuentas-de-Banco-para-turistas-o-estudiantes-de-corto-plazo-maximo-6-meses-3177b34d14234a2d8b33931b1915cadf" class="link-card animate animate-3">
+      <div class="link-icon">✈️</div>
+      <div class="link-content">
+        <div class="link-title">Cuentas de Banco para Turistas o Estudiantes de Corto Plazo</div>
+        <div class="link-desc">Máximo 6 meses · Revolut, Wise, Monzo y más</div>
+      </div>
+    </a>
+
+    <a href="https://www.notion.so/Directorio-de-Bancos-para-residentes-UK-2026-ec2e37aeacb24af69f194d92f4b6a79f" class="link-card animate animate-4">
+      <div class="link-icon">🏡</div>
+      <div class="link-content">
+        <div class="link-title">Directorio de Bancos para Residentes UK 2026</div>
+        <div class="link-desc">Comparativa completa · Cashback, switch bonuses y más</div>
+      </div>
+    </a>
+
+    <a href="https://www.notion.so/Nota-Informativa-Qu-es-el-OVERDRAFT-y-c-mo-afecta-tu-CREDIT-SCORE-d3a1a9377cb34c769d4d8d0d921411bc" class="link-card animate animate-5">
+      <div class="link-icon">⚠️</div>
+      <div class="link-content">
+        <div class="link-title">¿Qué es el OVERDRAFT y cómo afecta tu CREDIT SCORE?</div>
+        <div class="link-desc">Nota informativa · Evita errores que te cuestan caro</div>
+      </div>
+    </a>
+  </div>
+
+  <!-- RECURSOS TRANSPORTE -->
+  <div class="section-title">🚇 Transporte</div>
+  <div class="links">
+    <a href="https://www.notion.so/Guia-Transporte-Londres-47212e6a31cf4533a9b18723e81b1e0e" class="link-card animate animate-6">
+      <div class="link-icon">🚇</div>
+      <div class="link-content">
+        <div class="link-title">Guía de Transporte Londres</div>
+        <div class="link-desc">Oyster, Railcard, contactless · Ahorra 33% en viajes</div>
+      </div>
+    </a>
+
+    <a href="https://www.notion.so/Guia-de-transporte-de-ciudades-en-UK-2026-adba6ea737e1442386b18787c0c62f81" class="link-card animate animate-7">
+      <div class="link-icon">🚆</div>
+      <div class="link-content">
+        <div class="link-title">Guía de Transporte de Ciudades en UK 2026</div>
+        <div class="link-desc">Manchester, Birmingham, Edinburgh · Tarjetas y apps</div>
+      </div>
+    </a>
+  </div>
+
+  <!-- RECURSOS COMIDA -->
+  <div class="section-title">🍜 Comida & Ahorro</div>
+  <div class="links">
+    <a href="https://www.notion.so/Supermercados-y-Hacks-de-comida-97f1ba50d36d4b2f85d4758a2710b322" class="link-card animate animate-8">
+      <div class="link-icon">🛒</div>
+      <div class="link-content">
+        <div class="link-title">Supermercados y Hacks de Comida</div>
+        <div class="link-desc">Too Good To Go, Itsu, tarjetas de lealtad · Come bien gastando menos</div>
+      </div>
+    </a>
+  </div>
+
+  <!-- SOCIAL MEDIA -->
+  <div class="social">
+    <a href="https://instagram.com/TU-USUARIO-INSTAGRAM" class="social-link" title="Instagram">📷</a>
+    <a href="https://tiktok.com/@TU-USUARIO-TIKTOK" class="social-link" title="TikTok">🎵</a>
+    <a href="mailto:TU-EMAIL@gmail.com" class="social-link" title="Email">✉️</a>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    © 2025 Financial Court · Recursos para latinos en UK
+  </div>
+</div>
+
+</body>
+</html>
